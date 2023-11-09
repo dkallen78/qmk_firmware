@@ -18,14 +18,6 @@ enum layers {
 enum custom_keycodes {
   DKA_EN = SAFE_RANGE,
   DKA_EM,
-  DKA_SM_SP_A,
-  DKA_SM_SP_E,
-  DKA_SM_SP_I,
-  DKA_SM_SP_O,
-  DKA_SM_SP_U,
-  DKA_SM_UM_U,
-  DKA_SM_N_TLD,
-  TEST,
 };
 
 //Layer Dance Experiment start
@@ -75,70 +67,14 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   switch (keycode) {
     case DKA_EN:
       if (record->event.pressed) {
-        SEND_STRING("–");
+        SEND_STRING(SS_DOWN(X_LALT)SS_TAP(X_P0)SS_TAP(X_P1)SS_TAP(X_P5)SS_TAP(X_P0)SS_UP(X_LALT));
       } else {
 
       }
       break;
     case DKA_EM:
       if (record->event.pressed) {
-        SEND_STRING("—");
-      } else {
-
-      }
-      break;
-    case DKA_SM_SP_A:
-      if (record->event.pressed) {
-        SEND_STRING("á");
-      } else {
-
-      }
-      break;
-    case DKA_SM_SP_E:
-      if (record->event.pressed) {
-        SEND_STRING("é");
-      } else {
-
-      }
-      break;
-    case DKA_SM_SP_I:
-      if (record->event.pressed) {
-        SEND_STRING("í");
-      } else {
-
-      }
-      break;
-    case DKA_SM_SP_O:
-      if (record->event.pressed) {
-        SEND_STRING("ó");
-      } else {
-
-      }
-      break;
-    case DKA_SM_SP_U:
-      if (record->event.pressed) {
-        SEND_STRING("ú");
-      } else {
-
-      }
-      break;
-    case DKA_SM_UM_U:
-      if (record->event.pressed) {
-        SEND_STRING("ü");
-      } else {
-
-      }
-      break;
-    case DKA_SM_N_TLD:
-      if (record->event.pressed) {
-        SEND_STRING("ñ");
-      } else {
-
-      }
-      break;
-    case TEST:
-      if (record->event.pressed) {
-        SEND_STRING("test");
+        SEND_STRING(SS_DOWN(X_LALT)SS_TAP(X_P0)SS_TAP(X_P1)SS_TAP(X_P5)SS_TAP(X_P1)SS_UP(X_LALT));
       } else {
 
       }
@@ -204,7 +140,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |   `  |      |      |      |      |      |                    | Pg Up|      |  Up  |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
- * |      |      |      |      |      |      |-------.    ,-------| PgDwn| Left | Down |Right |      |      |
+ * |      |      |      |      |  —   |      |-------.    ,-------| PgDwn| Left | Down |Right |      |      |
  * |------+------+------+------+------+------|RGB_TOG|    |    ]  |------+------+------+------+------+------|
  * |LShift|      |      |      |      |      |-------|    |-------|   +  |   -  |   =  |   [  |   ]  |   \  |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
@@ -216,7 +152,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_RAISE] = LAYOUT(
   RGB_MOD, RGB_RMOD,RGB_SAI, RGB_SAD, RGB_VAI, RGB_VAD,                      KC_HOME, KC_END, _______, _______, _______, _______,
   KC_GRV, _______, _______, _______, _______, _______,                        KC_PGUP, _______, KC_UP,   _______, _______, _______,
-  _______, _______, _______, _______, _______, _______,                       KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, _______, XXXXXXX,
+  _______, _______, _______, _______, DKA_EN, DKA_EM,                       KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, _______, XXXXXXX,
   KC_LSFT, _______, _______, _______, _______, _______,   RGB_TOG, _______,  KC_PLUS, KC_MINS, KC_EQL,  KC_LBRC, KC_RBRC, KC_BSLS,
                              _______, _______, _______,  _______, _______,  _______, _______, _______
 ),
@@ -237,7 +173,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_ADJUST] = LAYOUT(
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
-  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TEST, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
+  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,
                              _______, _______, _______, _______, _______,  _______, _______, _______
   ),
