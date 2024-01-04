@@ -198,11 +198,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
  [_QWERTY] = LAYOUT(
-  TD(TD_ESC_CAPS),  KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                       KC_6,               KC_7,           KC_8,           KC_9,   KC_0,       KC_BSPC,
-  KC_TAB,           KC_Q,   KC_W,   KC_E,   KC_R,   KC_T,                       KC_Y,               KC_U,           KC_I,           KC_O,   KC_P,       KC_MINS,
-  KC_LCTL,          KC_A,   KC_S,   KC_D,   KC_F,   KC_G,                       KC_H,               KC_J,           KC_K,           KC_L,   KC_SCLN,    KC_QUOT,
-  KC_LSFT,          KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,   KC_LBRC,    KC_RBRC,KC_N,               KC_M,           KC_COMM,        KC_DOT, KC_SLSH,    KC_RSFT,
-                                    KC_LALT,ADJUST, LOWER,  KC_SPC,     KC_ENT, TD(TD_RAISE_DANCE), TG(_NUMPAD),    OSM(MOD_RALT)
+  TD(TD_ESC_CAPS),  KC_1,   KC_2,   KC_3,       KC_4,   KC_5,                           KC_6,               KC_7,           KC_8,           KC_9,   KC_0,       KC_BSPC,
+  KC_TAB,           KC_Q,   KC_W,   KC_E,       KC_R,   KC_T,                           KC_Y,               KC_U,           KC_I,           KC_O,   KC_P,       KC_MINS,
+  KC_LCTL,          KC_A,   KC_S,   KC_D,       KC_F,   KC_G,                           KC_H,               KC_J,           KC_K,           KC_L,   KC_SCLN,    KC_QUOT,
+  KC_LSFT,          KC_Z,   KC_X,   KC_C,       KC_V,   KC_B,   KC_LBRC,    KC_RBRC,    KC_N,               KC_M,           KC_COMM,        KC_DOT, KC_SLSH,    KC_RSFT,
+                                    KC_LALT,    ADJUST, LOWER,  KC_SPC,     KC_ENT,     TD(TD_RAISE_DANCE), TG(_NUMPAD),    OSM(MOD_RALT)
 ),
 /* LOWER
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -223,7 +223,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   _______, _______, _______, DKA_E,   _______, _______,                   DKA_UM,  DKA_U,   DKA_I,   DKA_O,   KC_F11,  KC_F12,
   KC_GRV,  DKA_A,   _______, _______, _______, _______,                   _______, _______, _______, _______, _______, KC_TILD,
   _______, _______, _______, _______, _______, _______, _______, _______, DKA_N,   DKA_MIC, DKA_LTE, DKA_GTE, _______, KC_PIPE,
-                             _______, _______, _______, _______, _______,  _______, _______, _______
+                             _______, _______, _______, _______, _______, _______, _______, _______
 ),
 /* RAISE
  * ,-----------------------------------------.                    ,-----------------------------------------.
@@ -232,7 +232,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |      |      |      |      |      |      |                    | Pg Up|      |  Up  |      |      |      |
  * |------+------+------+------+------+------|                    |------+------+------+------+------+------|
  * |      |      |      |      |   —  |   —  |-------.    ,-------| PgDwn| Left | Down |Right |      |      |
- * |------+------+------+------+------+------|RGB_TOG|    |    ]  |------+------+------+------+------+------|
+ * |------+------+------+------+------+------|RGB_TOG|    |       |------+------+------+------+------+------|
  * |LShift|      |      |      |      |      |-------|    |-------|   +  |   -  |   =  |   [  |   ]  |   \  |
  * `-----------------------------------------/       /     \      \-----------------------------------------'
  *                   | LAlt |ADJUST|LOWER | /Space  /       \Enter \  |RAISE |NUMPAD| RGUI |
@@ -241,7 +241,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  */
 
 [_RAISE] = LAYOUT(
-  KC_GRV, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                     KC_HOME, KC_END,  _______, _______,  _______, _______,
+  KC_GRV,  XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,                    KC_HOME, KC_END,  _______, _______,  _______, _______,
   _______, _______, _______, _______, _______, _______,                    KC_PGUP, _______, KC_UP,   _______,  _______, _______,
   _______, _______, _______, _______, DKA_EN,  DKA_EM,                     KC_PGDN, KC_LEFT, KC_DOWN, KC_RIGHT, _______, _______,
   KC_LSFT, _______, _______, _______, _______, _______, RGB_TOG, _______,  KC_PLUS, KC_MINS, KC_EQL,  KC_LBRC,  KC_RBRC, KC_BSLS,
@@ -283,10 +283,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  *                   `----------------------------'           '------''--------------------'
  */
 [_NUMPAD] = LAYOUT(
-  QK_BOOT, _______, _______, _______, _______, _______,                   _______, _______, _______,KC_LBRC, KC_RBRC, KC_DEL,
-  _______, _______, _______, _______, _______, _______,                     _______, KC_P7,   KC_P8,   KC_P9,  KC_F11,  KC_F12,
-  KC_GRV, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                   KC_CIRC, KC_P4, KC_P5, KC_P6, _______, KC_TILD,
-  _______, _______, _______, _______, _______, _______, _______, _______, XXXXXXX, KC_P1, KC_P2, KC_P3, KC_P0, KC_PIPE,
+  QK_BOOT, _______, _______, _______, _______, _______,                   _______, _______, _______, KC_LBRC, KC_RBRC, KC_DEL,
+  _______, _______, _______, _______, _______, _______,                   _______, KC_P7,   KC_P8,   KC_P9,   KC_F11,  KC_F12,
+  KC_GRV,  KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,                   KC_CIRC, KC_P4,   KC_P5,   KC_P6,   _______, KC_TILD,
+  _______, _______, _______, _______, _______, _______, _______, _______, XXXXXXX, KC_P1,   KC_P2,   KC_P3,   KC_P0,   KC_PIPE,
                              _______, _______, _______, _______, _______,  _______, _______, _______
 )
 };
@@ -373,3 +373,27 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
 /*layer_state_t layer_state_set_user(layer_state_t state) {
    return update_tri_layer_state(state, _LOWER, _RAISE, _ADJUST);
 }*/
+
+layer_state_t layer_state_set_user(layer_state_t state) {
+    switch (get_highest_layer(state)) {
+        case _QWERTY:
+            rgblight_sethsv(141, 245, 255);
+            break;
+        case _LOWER:
+            rgblight_sethsv(HSV_MAGENTA);
+            break;
+        case _RAISE:
+            rgblight_sethsv(HSV_GOLD);
+            break;
+        case _ADJUST:
+            rgblight_sethsv(HSV_RED);
+            break;
+        case _NUMPAD:
+            rgblight_sethsv(HSV_GREEN);
+            break;
+        default: // for any other layers, or the default layer
+            rgblight_sethsv(141, 245, 255);
+            break;
+    }
+  return state;
+}
