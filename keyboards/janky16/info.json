@@ -10,7 +10,14 @@
         "console": false,
         "extrakey": true,
         "mousekey": true,
-        "nkro": true
+        "nkro": true,
+        "encoder": true
+    },
+    "encoder": {
+        "rotary": [
+            {"pin_a": "D4", "pin_b": "C6"},
+            {"pin_a": "F6", "pin_b": "F7"}
+        ]
     },
     "matrix_pins": {
         "cols": ["B5", "B4", "E6", "D7"],
