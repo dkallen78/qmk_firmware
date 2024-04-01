@@ -1,0 +1,15 @@
+{
+    "keyboard": "janky16",
+    "layout": "LAYOUT",
+    "layers": [
+                [
+                        "KC_P7", "KC_P8", "KC_P9", "KC_DEL", "KC_P4", "KC_P5", "KC_P6", "KC_BSPC", "KC_P1", "KC_P2", "KC_P3", "KC_RGUI", "MO(1)", "KC_P0", "KC_PDOT", "KC_PENT"
+                ],
+                [
+                        "KC_PGUP", "KC_HOME", "KC_END", "KC_NLCK", "KC_PGDN", "KC_UP", "KC_TRNS", "KC_TRNS", "KC_LEFT", "KC_DOWN", "KC_RGHT", "KC_TRNS", "KC_TRNS", "KC_PSCR", "MO(2)", "KC_TRNS"
+                ],
+                [
+                        "QK_BOOT", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS", "KC_TRNS"
+                ]
+    ]
+}
